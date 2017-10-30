@@ -39,4 +39,4 @@ elif (userinput == "Paper"):
 
             
 print("Your choice: "+ userinput + "\nComputer choice: " + computer + "\n Thanks for Playing!");
-input("Press Enter to continure");
+input("Press Enter to continue");
