@@ -6,8 +6,7 @@ function setup() {
 
 function draw() {
     if (mouseIsPressed) {
-        colorMode(RGB);
-        fill(random(255), random(255), random(255), random(200));
+        fill(0);
         
     } else {
         fill(255);
