@@ -2,11 +2,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
-c = color(255, 204, 0)
+
 
 function draw() {
     if (mouseIsPressed) {
-        fill(c);
+        colorMode(RGB);
+        fill(random(255), random(255), random(255), random(200));
         
     } else {
         fill(255);
