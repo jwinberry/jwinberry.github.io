@@ -40,7 +40,9 @@ q, blockquote {
     content: none; }
 
 a img {
-  border: none; }
+  border: none; 
+    vertical-align: middle; 
+}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
