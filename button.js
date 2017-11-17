@@ -18,5 +18,3 @@ window.onclick = function(event) {
     }
   }
 }
-Try it Yourself »
-Right-alig
