@@ -62,38 +62,41 @@ def body(art):
     #art[5] = '======================='; driect replacement
     
 def leftArm(art):
-    art[5] = '                   |';
+    del art[5:-1]
+    art.insert(5, '      +-----+      |');
+    art.insert(5, '      +     +      |');
+    art.insert(5, '      +     +      |');
     art.insert(5, '      +-----+      |');
     art.insert(5, '===== +     +      |');
-    art.insert(5, '      +     +      |');
-    art.insert(5, '      +     +      |');
-    art.insert(5, '      +-----+      |');
     art.insert(5, '         +         |');
 
 def rightArm(art):
-    art[5] = '                   |';
+    del art[5:-1]
     art.insert(5, '      +-----+      |');
+    art.insert(5, '      +     +      |');
+    art.insert(5, '      +     +      |');
     art.insert(5, '===== +     +===== |');
-    art.insert(5, '      +     +      |');
-    art.insert(5, '      +     +      |');
     art.insert(5, '      +-----+      |');
     art.insert(5, '         +         |');
  
 
 def leftLeg(art):
-    art.insert(6, '      ||           |');
-    art.insert(6, '      ||           |');
-    art.insert(6, '      ||           |');
-    art.insert(6, '     _||_          |');
-    art.insert(6, '     |__|          |');
+    art.insert(11, '     |__|          |');
+    art.insert(11, '     _||_          |');
+    art.insert(11, '      ||           |');
+    art.insert(11, '      ||           |');
+    art.insert(11, '      ||           |');
+
     
 def rightLeg(art):
-    art[6] = '                        |';
-    art.insert(6, '      ||   ||      |');
-    art.insert(6, '      ||   ||      |');
-    art.insert(6, '      ||   ||      |');
-    art.insert(6, '     _||_ _||_     |');
-    art.insert(6, '     |__| |__|     |');
+    del art[11:-1]
+    art.insert(11, '     |__| |__|     |');
+    art.insert(11, '     _||_ _||_     |');
+    art.insert(11, '      ||   ||      |');
+    art.insert(11, '      ||   ||      |');
+    art.insert(11, '      ||   ||      |');
+    
+    
 
 def init():
     bodyParts = setParts()
@@ -101,23 +104,72 @@ def init():
     words = readWords()
     return bodyParts, art, words
 
+def setHangman(misses, bodyParts, art):
+    if (misses == 1):
+        bodyParts[1](art)
+    
+    elif(misses == 2):
+        bodyParts[2](art)
+    
+    elif(misses == 3):
+        bodyParts[3](art)
+
+    elif(misses == 4):
+        bodyParts[4](art)
+
+    elif(misses == 5):
+        bodyParts[5](art)
+
+    elif(misses == 6):
+        bodyParts[6](art)
+
+def getPlayerChoice():
+    return str(raw_input("Choose a letter: "))
+    
 def main():
     bodyParts, art, words = init()
+
+    misses  = 0;
+
+    word = []
+    for letter in random.choice(words):
+        word.append(letter)
+
+    wordStatus = [];
+
+    for letter in word:
+        wordStatus.append("_")
+
+    while(misses < 6 and wordStatus != word):
+        printArt(art)
+        print "Current Letters: " + str(wordStatus)
+        playerChoice = getPlayerChoice();
+
+        if(playerChoice in word):
+            x = 0
+            for letter in word :
+                if(letter == playerChoice):
+                    wordStatus[x] = playerChoice
+                x += 1
+        else:
+            misses += 1
+            setHangman(misses,bodyParts, art)
+
+        
     
-    printArt(art)
+    if(misses >= 6):
+        setHangman(misses,bodyParts,art)
+        printArt(art)
+        print "You lose, the word is: " + str(word)
+    else:
+        print "You Win, the word is: " + str(word)
+    playAgain = str(raw_input("Play again? (y or n): "))
     
-    misses = 1
-    bodyParts[1](art)
+    if (playAgain == "y" ):
+        main();
+
+
+
     
-    misses = 2
-    bodyParts[2](art)
-    
-    misses = 3
-    bodyParts[3](art)
-    
-    printArt(art);
-    
-    for i in range(20):
-        print(random.choice(words))
 
 main()
