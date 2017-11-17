@@ -80,8 +80,7 @@ body, html {
 .show{display:block;}
 
 
-body {
-    line-height: 1; 
+
 }
 
 ol, ul {
@@ -110,9 +109,7 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
-body {
-    font-family: sans-serif;
-    color: #2a2a2a;
+
     
 }
 
