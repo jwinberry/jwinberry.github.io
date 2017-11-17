@@ -56,10 +56,13 @@ time, mark, audio, video {
 
 /*show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show{display:block;}
-
-
 body {
-  line-height: 1; }
+    line-height: 1; 
+    background-image: url("B1.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
 
 ol, ul {
   list-style: none; }
