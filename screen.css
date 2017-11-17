@@ -56,12 +56,10 @@ time, mark, audio, video {
 
 /*show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show{display:block;}
+
+
 body {
-    line-height: 1; 
-    background-image: url("B1.jpg");
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: fixed;
+    ;
 }
 
 ol, ul {
@@ -91,8 +89,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  font-family: sans-serif;
-  color: #2a2a2a; }
+    font-family: sans-serif;
+    color: #2a2a2a;
+    line-height: 1; 
+    background-image: url("B1.jpg");
+    
+}
 
 a {
   color: #0388a6; }
