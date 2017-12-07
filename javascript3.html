@@ -2,26 +2,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Javascript3</title>
- 
     <meta charset="utf-8"/>
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
     <style> body {padding: 0; margin: 0;} </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
-    <script src="javascript3.js"></script> 
+    <script src="javascript3.js"></script>
   </head>
   <body>
+  <textarea cols="30" rows="10">
   
+ <!-- Duplicate this Prject -->
+ 
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+
+
+function draw() {
+    if (mouseIsPressed) {
+        fill(0,255,0,25);
+        rect(mouseX, mouseY, random(60), random(60));
+        
+
+        
+    } else {
+        fill(232, 98, 234,random(30));
+        ellipse(mouseX,mouseY, random(60),random(60));
+    }
+    
+    
+</textarea>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
   </body>
 </html>
+
+  
+  
+  
+  
+  
+  
+  
+  

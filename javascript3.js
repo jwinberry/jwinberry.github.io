@@ -1,22 +1,21 @@
- function setup() {
-  createCanvas(windowWidth, windowHeight);
  
+function setup() {
+  createCanvas(windowWidth, windowHeight);
 }
 
 
 
 function draw() {
     if (mouseIsPressed) {
-        fill(0);
+        fill(0,255,0,25);
+        rect(mouseX, mouseY, random(60), random(60));
+        
+
         
     } else {
-        fill(255);
+        fill(232, 98, 234,random(30));
+        ellipse(mouseX,mouseY, random(60),random(60));
     }
     
-    quad(x1,y1,x2,y2,x3,y3,x4,y4);
+    
 }
-
-
-
-
-
