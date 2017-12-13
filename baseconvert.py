@@ -1,0 +1,55 @@
+import random
+
+
+def changeToBinary(n):
+    if n == 0:
+        print n
+    else:
+        result = ''
+        while(n != 0):
+            result += str(n%2)
+            n /= 2
+        print "Binary " + result[::-1]
+
+def changeToHex(n):
+    if n == 0:
+        print n
+    else:
+        result = ''
+        while(n != 0):
+            if n % 16 == 10:
+                result += 'A'
+            elif n % 16 == 11:
+                result += 'B'
+            elif n % 16 == 12:
+                result += 'C'
+            elif n % 16 == 13:
+                result += 'D'
+            elif n % 16 == 14:
+                result += 'E'
+            elif n % 16 == 15:
+                result += 'F'
+            else:
+                result += str(n % 16)
+            n /= 16 
+        print "Hexidecimal " + result[::-1]
+
+while True:
+    print("Select any number to convert")
+    print("Or 'quit' to exit")
+    x = (raw_input("Number: "))
+    
+    print("Enter 2 to convert to binary or 16 to convert to Hex")
+    y = raw_input("Base: ")
+
+    if str(x) == "quit":
+        break
+    elif int(y) == 2: 
+        changeToBinary(int(x))
+    elif int(y) == 16:
+        changeToHex(int(x))
+    else : 
+        print "INVALID INPUT!"
+
+
+
