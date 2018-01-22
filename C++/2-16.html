@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 2.16</title>
+    <meta content="">
+    <style></style>
+  </head>
+<center>
+  <body>  <h2> Exercise 2.16 </h2>
+  <textarea cols="50" rows="50">
+ /* A program that asks the user to enter two numbers, obtains the two numbers from the userand prints the sum, product, difference, and quotient of the two numbers.    */
+
+#include <iostream> 
+
+int main() {
+
+    int number1{0};
+    int number2{0};
+    int sum{0};
+    int product{0};
+    int difference{0};
+    int quotient{0};
+
+    std::cout << "Enter first integer:";
+    std::cin >> number1;
+
+    std::cout << "Enter second integer:";
+    std::cin >> number2; 
+
+    sum = number1 + number2;
+    product = number1 * number2;
+    difference = number1 - number2;
+    quotient = number1 / number2;
+
+    std::cout << "Sum is: " << sum << '\n' ;
+    std::cout << "Product is: " << product << '\n';
+    std::cout << "Difference is: " << difference << '\n';
+    std::cout << "Quotient is : " << quotient << '\n'; 
+
+    return 0;
+
+} 
+
+} 
+
+
+</textarea>
+  
+  <center>
+  
+  </body>
+ 
+</html>
