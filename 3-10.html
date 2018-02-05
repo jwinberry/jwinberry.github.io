@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercise 3.10</title>
+  <meta content="">
+  <style></style>
+</head>
+<center>
+  <body>  <h2> Exercise 3.10</h2>
+    <textarea cols="50" rows="50">
+//Invoice Class
+//Creates invoice for hardware supplies
+#include <iostream> 
+#include "3-10.h"
+
+using namespace std;
+
+int main()
+{
+
+	Invoice invoice1{"Item 1",  "item 1 description", 5, 25};
+	
+
+
+	cout << "invoice1 part number: " << invoice1.getPartNum() << endl;
+	cout << "invoice1 description: " << invoice1.getDescription() << endl;
+	cout << "invoice1 quantity: " << invoice1.getQuantity() << endl;
+	cout << "invoice1 price: " << invoice1.getPrice() << endl;
+	cout << "invoice1 total: " << invoice1.getInvoiceAmount() << endl;
+	cout << endl;
+
+	invoice1.setPartNum("Item 2");
+	invoice1.setDescription("Item 2 description");
+	invoice1.setQuantity(25);
+	invoice1.setPrice(25);
+
+	cout << "invoice1 part number: " << invoice1.getPartNum() << endl;
+	cout << "invoice1 description: " << invoice1.getDescription() << endl;
+	cout << "invoice1 quantity: " << invoice1.getQuantity() << endl;
+	cout << "invoice1 price: " << invoice1.getPrice() << endl;
+	cout << "invoice1 total: " << invoice1.getInvoiceAmount() << endl;
+
+
+} 
+</textarea>
+ <br/><br/>
+ <textarea area cols="50" rows="50">
+
+#include <string> 
+#include <iostream>
+
+using namespace std;
+
+class Invoice
+{
+public:
+	Invoice(string partNum, string descript, int quant, int cost)
+	:partNumber{partNum}, description{descript}
+	{
+		if (quant > 0) {
+			quantity = quant;
+		}
+		if (cost > 0) {
+			price = cost;
+
+		}
+	}
+
+	string getPartNum() {
+		return partNumber;
+	}
+
+	void setPartNum(string partNum)
+	{
+		partNumber = partNum;
+	}
+	string getDescription()
+	{
+		return description;
+	}
+	void setDescription(string descript)
+	{
+		description = descript;
+	}
+
+	int getQuantity()
+	{
+		return quantity;
+	}
+	void setQuantity(int quant)
+	{
+		quantity = quant;
+	}
+	int getPrice()
+	{
+		return price;
+	}
+	void setPrice(int cost)
+	{
+		price = cost;
+	}
+
+	int getInvoiceAmount()
+	{
+		invoiceAmount = price * quantity;
+		return invoiceAmount;
+	}
+private:
+	string partNumber;
+	string description;
+	int quantity = 0;
+	int price = 0;
+	int invoiceAmount = 0;
+	
+};
+
+
+
+
+
+
+
+
+
+</textarea>
+  <center>
+
+  </body>
+
+  </html>
