@@ -1,0 +1,63 @@
+//gas mileage
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main(){
+	//initialization phase
+	double total{0};
+	unsigned int tripsTaken{0};
+	
+
+	
+ // initialize # of miles entered so far
+
+	//processing phase
+	// prompt for input and read miles from user
+
+	cout << "Enter miles driven or -1 to quit: ";
+	double miles;
+	cin >> miles;
+	cout << "Enter gallons used or -1 to quit: ";
+	double gallons;
+	cin >> gallons;
+	cout << "MPG this trip" << miles / gallons;  
+
+
+	//loop until sentinel value read from userss
+	while (miles && gallons != -1) 
+	{
+		total = total + miles / gallons; // miles per gallon 
+		tripsTaken = tripsTaken + 1;
+
+		cout << "\nEnter miles driven or -1 to quit: ";
+		cin >> miles;
+		cout << "Enter gallons used or -1 to quit: ";
+		cin >> gallons;
+		cout << "MPG this trip: " << miles / gallons;
+
+	};
+
+	//termination phase
+	// if user entered at least one mile 
+
+	if (tripsTaken != 0)
+	{
+		double average{static_cast<double>(total) / tripsTaken };
+
+		cout << "you took a total of: " << tripsTaken << "trips."; 
+		cout << "the average of miles per gallon for all trips is:  " << total ;
+		cout << setprecision(2) << fixed ;
+
+	}
+
+	else
+	{
+		 cout <<"nothing entered......" << endl;
+
+	};
+
+
+
+}
